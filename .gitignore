@@ -1,0 +1,8 @@
+/node_modules/
+/typings/
+/npm-debug.log
+/.idea
+
+/app/app.private-config.js
+/app/app.private-config.ts
+/app/app.private-config.js.map
