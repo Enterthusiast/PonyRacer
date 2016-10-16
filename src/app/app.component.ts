@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'ponyracer-app',
-  template: '<h1>PonyRacer</h1>'
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class PonyRacerAppComponent {
-
+  title = 'PonyRacer';
 }
