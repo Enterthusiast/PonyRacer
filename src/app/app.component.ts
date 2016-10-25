@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class PonyRacerAppComponent {
   title = 'PonyRacer';
+  numberOfUsers: number = 146;
+  user: any = { name: 'Cédric' };
+  onNewRace(event) {
+    console.log(event);
+    event.preventDefault();
+    event.stopPropagation();
+    return 'A new race just begun!'
+  }
 }

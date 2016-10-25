@@ -1,3 +1,13 @@
 <h1>
   {{title}}
 </h1>
+<h2>
+  {{numberOfUsers}} users
+</h2>
+<h3>
+  Welcome {{user.name}}
+</h3>
+<ns-races (newRaceAvailable)="onNewRace($event)"></ns-races>
+<input type="text" #name>
+<button (click)="name.focus()">Focus the input</button>
+<ns-ponies></ns-ponies>
