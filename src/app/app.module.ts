@@ -7,6 +7,10 @@ import { PonyRacerAppComponent } from './app.component';
 import { RacesComponent } from './races/races.component';
 import { PoniesComponent } from './ponies/ponies.component';
 
+import { RaceService } from './services/race.service';
+import { ApiService } from './services/api.service';
+import {RacefakeService} from "./services/racefake.service";
+
 @NgModule({
   declarations: [
     PonyRacerAppComponent,
@@ -18,7 +22,12 @@ import { PoniesComponent } from './ponies/ponies.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    ApiService,
+    RaceService,
+    // Fake Race Service
+    { provide: RaceService, useClass: RacefakeService }
+  ],
   bootstrap: [PonyRacerAppComponent]
 })
 export class AppModule { }
