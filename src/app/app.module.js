@@ -13,20 +13,38 @@ var core_1 = require('@angular/core');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var app_component_1 = require('./app.component');
+var races_component_1 = require('./races/races.component');
+var ponies_component_1 = require('./ponies/ponies.component');
+var race_service_1 = require('./services/race.service');
+var api_service_1 = require('./services/api.service');
+var racefake_service_1 = require("./services/racefake.service");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             declarations: [
-                app_component_1.PonyRacerAppComponent
+                app_component_1.PonyRacerAppComponent,
+                races_component_1.RacesComponent,
+                ponies_component_1.PoniesComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 http_1.HttpModule
             ],
-            providers: [],
+            providers: [
+                api_service_1.ApiService,
+                // RaceService,
+                // // Fake Race Service
+                // { provide: RaceService, useClass: RacefakeService }
+                { provide: 'IS_PROD', useValue: true },
+                {
+                    provide: race_service_1.RaceService,
+                    useFactory: function (IS_PROD, apiService) { return IS_PROD ? new race_service_1.RaceService(apiService) : new racefake_service_1.RacefakeService(); },
+                    deps: ['IS_PROD', api_service_1.ApiService]
+                }
+            ],
             bootstrap: [app_component_1.PonyRacerAppComponent]
         }), 
         __metadata('design:paramtypes', [])

@@ -13,6 +13,10 @@ export class PoniesComponent implements OnInit {
     this.ponies = [{ name: 'Fluttershy' }, { name: 'Rarity' }, { name: 'Brocoly' }, { name: 'Ravioly' }];
   }
 
+  betOnPony(pony) {
+    console.log(pony.name + ' clicked');
+  }
+
   ngOnInit() {
   }
 

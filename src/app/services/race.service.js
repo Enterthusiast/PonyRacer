@@ -9,27 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var PonyRacerAppComponent = (function () {
-    function PonyRacerAppComponent() {
-        this.title = 'PonyRacer';
-        this.numberOfUsers = 146;
-        this.user = { name: 'Cédric' };
+var api_service_1 = require('./api.service');
+var RaceService = (function () {
+    function RaceService(apiService) {
+        this.apiService = apiService;
     }
-    PonyRacerAppComponent.prototype.onNewRace = function (event) {
-        console.log(event);
-        event.preventDefault();
-        event.stopPropagation();
-        return 'A new race just begun!';
+    RaceService.prototype.list = function () {
+        return this.apiService.get('/races');
     };
-    PonyRacerAppComponent = __decorate([
-        core_1.Component({
-            selector: 'ponyracer-app',
-            templateUrl: './app.component.html',
-            styleUrls: ['./app.component.css']
-        }), 
-        __metadata('design:paramtypes', [])
-    ], PonyRacerAppComponent);
-    return PonyRacerAppComponent;
+    RaceService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [api_service_1.ApiService])
+    ], RaceService);
+    return RaceService;
 }());
-exports.PonyRacerAppComponent = PonyRacerAppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.RaceService = RaceService;
+//# sourceMappingURL=race.service.js.map

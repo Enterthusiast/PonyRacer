@@ -41,6 +41,7 @@
       'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
       'ts':                         'npm:plugin-typescript@4.0.10/lib/plugin.js',
       'typescript':                 'npm:typescript@2.0.2/lib/typescript.js',
+      'moment':                     'node_modules/moment/moment',
 
     },
     // packages tells the System loader how to load when no filename and/or no extension

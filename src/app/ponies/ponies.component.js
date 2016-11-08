@@ -9,27 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var PonyRacerAppComponent = (function () {
-    function PonyRacerAppComponent() {
-        this.title = 'PonyRacer';
-        this.numberOfUsers = 146;
-        this.user = { name: 'Cédric' };
+var PoniesComponent = (function () {
+    function PoniesComponent() {
+        this.ponies = [{ name: 'Rainbow Dash' }, { name: 'Pinkie Pie' }];
     }
-    PonyRacerAppComponent.prototype.onNewRace = function (event) {
-        console.log(event);
-        event.preventDefault();
-        event.stopPropagation();
-        return 'A new race just begun!';
+    PoniesComponent.prototype.refreshPonies = function () {
+        this.ponies = [{ name: 'Fluttershy' }, { name: 'Rarity' }, { name: 'Brocoly' }, { name: 'Ravioly' }];
     };
-    PonyRacerAppComponent = __decorate([
+    PoniesComponent.prototype.ngOnInit = function () {
+    };
+    PoniesComponent = __decorate([
         core_1.Component({
-            selector: 'ponyracer-app',
-            templateUrl: './app.component.html',
-            styleUrls: ['./app.component.css']
+            selector: 'ns-ponies',
+            templateUrl: './ponies.component.html',
+            styleUrls: ['./ponies.component.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], PonyRacerAppComponent);
-    return PonyRacerAppComponent;
+    ], PoniesComponent);
+    return PoniesComponent;
 }());
-exports.PonyRacerAppComponent = PonyRacerAppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.PoniesComponent = PoniesComponent;
+//# sourceMappingURL=ponies.component.js.map

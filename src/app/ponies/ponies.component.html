@@ -1,7 +1,6 @@
 <button (click)="refreshPonies()">Refresh</button>
-<ul>
-  <li *ngFor="let pony of ponies; let isEven=even"
-      [style.color]="isEven ? 'green' : 'black'">
-    {{pony.name}}
-  </li>
-</ul>
+<ns-pony *ngFor="let pony of ponies; let isEven=even"
+         [isEven]=isEven
+         [pony]=pony
+         (ponySelected)="betOnPony($event)">
+</ns-pony>
