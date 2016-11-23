@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 export class RacefakeService {
 
   list() {
-    return [{ name: 'London' }];
+    return [{ name: 'London' }, { name: 'Newcastle' }];
   }
 
 }
